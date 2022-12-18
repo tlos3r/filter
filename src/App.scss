@@ -1,0 +1,31 @@
+.dot {
+    width: 15px;
+    aspect-ratio: 1;
+    position: relative;
+}
+.dot::before,
+.dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #000;
+}
+.dots::before {
+    box-shadow: -26px 0;
+    animation: d10-1 1.5s infinite linear;
+}
+.dots::after {
+    transform: rotate(0deg) translateX(26px);
+    animation: d10-2 1.5s infinite linear;
+}
+@keyframes d10-1 {
+    50% {
+        transform: translateX(26px);
+    }
+}
+@keyframes d10-2 {
+    100% {
+        transform: rotate(-360deg) translateX(26px);
+    }
+}
